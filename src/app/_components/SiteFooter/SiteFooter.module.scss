@@ -1,27 +1,29 @@
+@use "../../styles/mixins" as mixins;
+
 .footer {
-  background: linear-gradient(
-    90deg,
-    var(--semiTransparentBrown),
-    var(--semiTransparentBlack),
-    var(--semiTransparentBrown)
+  @include mixins.glass-bar-surface(
+    $radius-top-right: 1em,
+    $radius-top-left: 1em,
+    $radius-bottom-right: 0,
+    $radius-bottom-left: 0
   );
   text-align: center;
   height: 4rem;
-  transform: rotate(180deg);
   position: relative;
   bottom: 0;
 }
 
 .footerContent {
-  padding: 1.5rem;
-  box-shadow: inset 0 -2px 0 0 var(--smoothGold);
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
-  overflow: hidden;
+  @include mixins.glass-bar-inner(
+    $radius-top-right: 1em,
+    $radius-top-left: 1em,
+    $radius-bottom-right: 0,
+    $radius-bottom-left: 0
+  );
 }
 
 .footerText {
-  transform: rotate(180deg);
+
   color: var(--richGoldd);
   transition: 0.5s;
   text-decoration: none;

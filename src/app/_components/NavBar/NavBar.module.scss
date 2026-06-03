@@ -2,70 +2,15 @@
 @use "../../styles/mixins" as mixins;
 
 .navWrapperWrap {
-  background: linear-gradient(
-    90deg,
-    var(--semiTransparentBrown),
-    var(--semiTransparentBlack),
-    var(--semiTransparentBrown)
-  );
-  backdrop-filter: blur(2px);
+  @include mixins.glass-bar-surface();
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
   z-index: 100;
-  overflow: hidden;
-  transition:
-    background 1s ease,
-    all 1s ease;
-}
-
-.navWrapperWrap::after {
-  content: "";
-  position: absolute;
-  background: var(--darkOverlay);
-  backdrop-filter: blur(4px);
-  inset: 0;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 1s ease;
-}
-
-.navWrapperWrap:hover::after {
-  opacity: 1;
-}
-
-.navWrapperWrap:hover {
-  background: transparent;
 }
 
 .navWrapper {
-  padding: 1.5rem;
-  box-shadow: inset 0 -2px 0 0 var(--smoothGold);
-  border-bottom-right-radius: 1em;
-  border-bottom-left-radius: 1em;
-  overflow: hidden;
-  transition: box-shadow 1s ease;
-}
-
-.navWrapper::after {
-  content: "";
-  background: linear-gradient(90deg, var(--whiteBeige), var(--smoothGold));
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 0.5s ease;
-}
-
-.navWrapper:hover {
-  box-shadow: inset 0 -2px 0 0 transparent;
-}
-
-.navWrapper:hover::after {
-  width: 0;
+  @include mixins.glass-bar-inner();
 }
 
 .navegationBoxCont {
