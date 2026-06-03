@@ -6,7 +6,7 @@ export function ContactSection() {
       <div className={styles.contact}>
         <div className={styles.subtitleH2Box}>
           <h2
-            className={`${styles.subtitle} ${styles.subtitleContact} ${styles.downLine} ${styles.downLineA}`}
+            className={`${styles.subtitle} ${styles.subtitleContact} ${styles.hoverUnderline}`}
           >
             Contato
           </h2>

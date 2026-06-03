@@ -10,9 +10,7 @@ export function ContentSection({ id, title, content }: ContentSectionProps) {
   return (
     <section id={id} className={styles.secBoxes}>
       <div className={styles.subtitleH2Box}>
-        <h2
-          className={`${styles.subtitle} ${styles.downLine} ${styles.downLineA}`}
-        >
+        <h2 className={`${styles.subtitle} ${styles.hoverUnderline}`}>
           {title}
         </h2>
       </div>

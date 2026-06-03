@@ -16,7 +16,7 @@ export function HeroSection() {
       <h1 id="home" className={styles.heading}>
         Seu nome
       </h1>
-      <p className={`${styles.titleP} ${styles.downLine} ${styles.downLineA}`}>
+      <p className={`${styles.titleP} ${styles.hoverUnderline}`}>
         Estudante de tecnologia
       </p>
     </main>

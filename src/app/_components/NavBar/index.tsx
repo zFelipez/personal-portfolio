@@ -9,7 +9,7 @@ export function NavBar() {
             <li>
               <a
                 href="#home"
-                className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
+                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Home
               </a>
@@ -17,7 +17,7 @@ export function NavBar() {
             <li>
               <a
                 href="#about"
-                className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
+                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Sobre
               </a>
@@ -25,7 +25,7 @@ export function NavBar() {
             <li>
               <a
                 href="#skills"
-                className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
+                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Habilidades
               </a>

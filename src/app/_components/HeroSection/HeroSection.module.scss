@@ -1,4 +1,5 @@
 @use "../../styles/fontSizes" as font;
+@use "../../styles/mixins" as mixins;
 
 .mainCont {
   margin-top: 6rem;
@@ -39,23 +40,6 @@
   color: var(--black);
 }
 
-.downLine {
-  padding: 0.1rem 0;
-  position: relative;
-  transition: color 0.5s ease;
-}
-
-.downLineA::after {
-  content: "";
-  background: linear-gradient(90deg, var(--smoothGold), var(--richGold));
-  width: 0;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 0.5s ease;
-}
-
-.downLineA:hover::after {
-  width: 100%;
+.hoverUnderline {
+  @include mixins.hover-underline();
 }
