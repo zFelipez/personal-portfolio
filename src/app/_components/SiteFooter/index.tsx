@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./SiteFooter.module.scss";
 
 export function SiteFooter() {
@@ -6,9 +7,9 @@ export function SiteFooter() {
       <div className={styles.footerContent}>
         <p className={styles.footerText}>
           Meu Github{" "}
-          <a className={styles.footerLink} href="link">
+          <Link className={styles.footerLink} href="link">
             link do github
-          </a>
+          </Link>
         </p>
       </div>
     </footer>

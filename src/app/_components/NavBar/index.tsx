@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./NavBar.module.scss";
 
 export function NavBar() {
@@ -7,36 +8,36 @@ export function NavBar() {
         <nav>
           <ul className={styles.navegationBoxCont}>
             <li>
-              <a
+              <Link
                 href="#home"
                 className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#about"
                 className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Sobre
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#skills"
                 className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
               >
                 Habilidades
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#contact"
                 className={`${styles.navegationBoxContI} ${styles.navegationBoxContIAc}`}
               >
                 Contato
-              </a>
+              </Link>
             </li>
             <li>
               <button
