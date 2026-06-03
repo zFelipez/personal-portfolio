@@ -127,6 +127,29 @@
     overflow: visible;
   }
 
+  .navShell:has(.menuToggle:hover),
+  .navShell:has(.menuToggle:active),
+  .navShell:has(.menuToggle:focus-visible),
+  .navShell:has(.themeButton:hover),
+  .navShell:has(.themeButton:active),
+  .navShell:has(.themeButton:focus-visible) {
+    background: linear-gradient(
+      90deg,
+      var(--semiTransparentBrown),
+      var(--semiTransparentBlack),
+      var(--semiTransparentBrown)
+    );
+  }
+
+  .navShell:has(.menuToggle:hover)::after,
+  .navShell:has(.menuToggle:active)::after,
+  .navShell:has(.menuToggle:focus-visible)::after,
+  .navShell:has(.themeButton:hover)::after,
+  .navShell:has(.themeButton:active)::after,
+  .navShell:has(.themeButton:focus-visible)::after {
+    opacity: 0;
+  }
+
   .navToolbar {
     display: flex;
     justify-content: space-between;
