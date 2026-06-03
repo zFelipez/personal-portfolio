@@ -75,3 +75,8 @@ a {
     color-scheme: dark;
   }
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}

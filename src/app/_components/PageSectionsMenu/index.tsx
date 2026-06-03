@@ -10,7 +10,7 @@ type AvailableSectionsProps = {
   title: string;
 };
 
-export function PageSectionsAdvicer() {
+export function PageSectionsMenu() {
   const [availableSections, setIsAvailableSections] = useState<
     AvailableSectionsProps[]
   >([]);
