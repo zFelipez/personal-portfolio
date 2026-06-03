@@ -1,17 +1,18 @@
 import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div id="site-content">
-      <div className="nav-wrapper-wrap">
-        <div className="nav-wrapper">
-          <nav className="navegation-box">
-            <ul className="navegation-box-cont">
+    <div id="site-content" className={styles.page}>
+      <div className={styles.navWrapperWrap}>
+        <div className={styles.navWrapper}>
+          <nav>
+            <ul className={styles.navegationBoxCont}>
               <li>
                 {" "}
                 <a
                   href="#home"
-                  className="navegation-box-cont-i navegation-box-cont-i-a down-line down-line-a nav-box-i-back"
+                  className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
                 >
                   {" "}
                   Home
@@ -21,7 +22,7 @@ export default function Home() {
                 {" "}
                 <a
                   href="#about"
-                  className="navegation-box-cont-i navegation-box-cont-i-a down-line down-line-a nav-box-i-back"
+                  className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
                 >
                   {" "}
                   Sobre
@@ -31,7 +32,7 @@ export default function Home() {
                 {" "}
                 <a
                   href="#skills"
-                  className="navegation-box-cont-i navegation-box-cont-i-a down-line down-line-a nav-box-i-back"
+                  className={`${styles.navegationBoxContI} ${styles.downLine} ${styles.downLineA} ${styles.navBoxIBack}`}
                 >
                   Habilidades
                 </a>
@@ -40,12 +41,14 @@ export default function Home() {
                 {" "}
                 <a
                   href="#contact"
-                  className="navegation-box-cont-i navegation-box-cont-i-ac"
+                  className={`${styles.navegationBoxContI} ${styles.navegationBoxContIAc}`}
                 >
                   Contato
                 </a>
               </li>
-              <button id="theme-switch" className="navegation-box-cont-i">
+              <button
+                className={`${styles.themeSwitch} ${styles.navegationBoxContI}`}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -61,30 +64,37 @@ export default function Home() {
         </div>
       </div>
 
-      <main className=" main-cont">
+      <main className={styles.mainCont}>
         <Image
           id="home"
           src="/img1.png"
           alt="profile-photo"
-          className="profile-photo"
+          className={styles.profilePhoto}
           width={320}
           height={320}
           priority
         />
         <h1 id="home">Seu nome</h1>
-        <p className="title-p down-line down-line-a  ">
+        <p
+          className={`${styles.titleP} ${styles.downLine} ${styles.downLineA}`}
+        >
           {" "}
           Estudante de tecnologia
         </p>
       </main>
 
-      <section id="about" className="about sec-boxes">
-        <div className="subtitle-h2-box">
-          <h2 className="subtitle  down-line down-line-a"> Sobre mim</h2>
+      <section id="about" className={styles.secBoxes}>
+        <div className={styles.subtitleH2Box}>
+          <h2
+            className={`${styles.subtitle} ${styles.downLine} ${styles.downLineA}`}
+          >
+            {" "}
+            Sobre mim
+          </h2>
         </div>
 
-        <div className="about-box  subtitle-box">
-          <p className="about-box-p  subtitle-box-p">
+        <div className={styles.subtitleBox}>
+          <p className={styles.subtitleBoxP}>
             {" "}
             Feliperem ipsum dolor sit amet consectetur, adipisicing elit.
             Molestias, tempora ad fuga nisi eaque libero aliquid dolorum dolore
@@ -102,13 +112,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="skills sec-boxes">
-        <div className="subtitle-h2-box">
-          <h2 className="subtitle  down-line down-line-a"> Habilidades</h2>
+      <section id="skills" className={styles.secBoxes}>
+        <div className={styles.subtitleH2Box}>
+          <h2
+            className={`${styles.subtitle} ${styles.downLine} ${styles.downLineA}`}
+          >
+            {" "}
+            Habilidades
+          </h2>
         </div>
 
-        <div className="skills-box  subtitle-box ">
-          <p className="skills-box-p   subtitle-box-p">
+        <div className={styles.subtitleBox}>
+          <p className={styles.subtitleBoxP}>
             {" "}
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
             tempora ad fuga nisi eaque libero aliquid dolorum dolore laborum
@@ -125,11 +140,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className=" sec-boxes">
-        <div className="contact">
-          <div className="subtitle-h2-box">
+      <section id="contact" className={styles.secBoxes}>
+        <div className={styles.contact}>
+          <div className={styles.subtitleH2Box}>
             {" "}
-            <h2 className="subtitle subtitle-contact  down-line down-line-a">
+            <h2
+              className={`${styles.subtitle} ${styles.subtitleContact} ${styles.downLine} ${styles.downLineA}`}
+            >
               {" "}
               Contato
             </h2>
@@ -138,44 +155,44 @@ export default function Home() {
           <form
             action="https://formsubmit.co/seu_email"
             method="POST"
-            className="form"
+            className={styles.form}
           >
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <input
                 type="text"
                 name="name"
                 placeholder="Nome"
-                className="form-field form-field-s"
+                className={`${styles.formField} ${styles.formFieldS}`}
                 required
               />
             </div>
 
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="form-field form-field-s"
+                className={`${styles.formField} ${styles.formFieldS}`}
                 required
               />
             </div>
 
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <textarea
                 name="message"
                 placeholder="Digite sua mensagem"
                 rows={6}
-                className="form-field"
+                className={styles.formField}
                 required
               ></textarea>
             </div>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://..." />
 
-            <div className="form-group">
-              <button type="submit" className="form-btn">
-                <div className="text"> Enviar </div>
-                <div className="wave"></div>
+            <div className={styles.formGroup}>
+              <button type="submit" className={styles.formBtn}>
+                <div className={styles.text}> Enviar </div>
+                <div className={styles.wave}></div>
               </button>{" "}
             </div>
           </form>
@@ -183,7 +200,9 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer  nav-wrapper nav-wrapper-wrap ">
+        <div
+          className={`${styles.footer} ${styles.navWrapper} ${styles.navWrapperWrap}`}
+        >
           {" "}
           <p>
             Meu Github <a href="link"> link do github</a>{" "}
