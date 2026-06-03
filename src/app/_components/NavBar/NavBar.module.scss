@@ -1,3 +1,5 @@
+@use "../../styles/fontSizes" as font;
+
 .navWrapperWrap {
   background: linear-gradient(
     90deg,
@@ -84,7 +86,7 @@
 .navegationBoxContI {
   text-decoration: none;
   color: var(--richGoldd);
-  font-size: 1.2rem;
+  font-size: font.$font-size-md;
 }
 
 .navBoxIBack {

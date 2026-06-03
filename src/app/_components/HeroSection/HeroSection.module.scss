@@ -1,3 +1,5 @@
+@use "../../styles/fontSizes" as font;
+
 .mainCont {
   margin-top: 6rem;
   display: flex;
@@ -22,7 +24,7 @@
 }
 
 .heading {
-  font-size: 4rem;
+  font-size: font.$font-size-hero;
   padding-top: 2rem;
   transition: 0.5s;
   color: var(--black);
@@ -33,7 +35,7 @@
 }
 
 .titleP {
-  font-size: 1.5rem;
+  font-size: font.$font-size-md;
   color: var(--black);
 }
 
