@@ -13,10 +13,44 @@
   @include mixins.glass-bar-inner();
 }
 
+.navContent {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border:none;
+    border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    var(--semiTransparentBrown),
+    var(--semiTransparentBrown)
+  );
+  color: var(--beigeGold);
+  box-shadow: 0 0 10px var(--vidro);
+}
+
+.menuToggle:hover {
+  cursor: pointer;
+    background: linear-gradient(
+        90deg,
+        var(--semiTransparentBlack),
+        var(--semiTransparentBlack)
+    );
+}
+
 .navegationBoxCont {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 
@@ -25,8 +59,14 @@
   margin-top: 0.1rem;
 }
 
-.navWrapperWrap:hover .navBoxIBack {
-  color: var(--black);
+@media (min-width: 769px) {
+  .navWrapperWrap:hover .navBoxIBack {
+    color: var(--black);
+  }
+
+  .hoverUnderline {
+  @include mixins.hover-underline();
+}
 }
 
 .navegationBoxContI {
@@ -40,6 +80,10 @@
 }
 
 .themeSwitch {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   height: 1.5rem;
   width: 1.5rem;
   padding: 0;
@@ -55,9 +99,7 @@
   cursor: pointer;
 }
 
-.hoverUnderline {
-  @include mixins.hover-underline();
-}
+
 
 .navegationBoxContIAc {
   background: linear-gradient(
@@ -77,4 +119,88 @@
   background: var(--black);
   color: var(--richGoldd);
   border: none;
+}
+
+@media (max-width: 768px) {
+  .navWrapperWrap,
+  .navWrapper,
+  .navContent {
+    overflow: visible;
+  }
+
+  .navContent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navWrapper {
+    padding: 1rem;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  .navegationBoxCont {
+    position: absolute;
+    top: calc(100% + 0.85rem);
+    right: 0;
+    width: min(18rem, calc(100vw - 2rem));
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    list-style: none;
+    border-radius: 1rem;
+    border: 1px solid var(--white);
+    background: linear-gradient(
+      180deg,
+      var(--semiTransparentBrown),
+      var(--semiTransparentBlack),
+      var(--semiTransparentBrown)
+    );
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+    
+  }
+
+  .navegationBoxContOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    margin-top: 4px;
+    
+  }
+
+  .navegationBoxCont li {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .navegationBoxContI {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.45rem 0.6rem;
+    border-radius: 0.75rem;
+  }
+
+  .themeSwitch {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: fit-content;
+    max-width: fit-content;
+    border-radius: 0.75rem;
+     
+  }
 }
