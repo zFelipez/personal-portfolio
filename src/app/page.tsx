@@ -1,14 +1,13 @@
-import styles from "./page.module.css";
-import { ContentSection } from "../_components/ContentSection";
-import { ContactSection } from "../_components/ContactSection";
-import { HeroSection } from "../_components/HeroSection";
-import { PageSectionsAdvicer } from "../_components/PageSectionsAdvicer";
+import { ContentSection } from "./_components/ContentSection";
+import { ContactSection } from "./_components/ContactSection";
+import { HeroSection } from "./_components/HeroSection";
+import { PageSectionsAdvicer } from "./_components/PageSectionsAdvicer";
 
 export default function Home() {
   return (
-    <div id="site-content" className={styles.page}>
-      <PageSectionsAdvicer />
+    <div id="site-content">
       <HeroSection />
+      <PageSectionsAdvicer />
       <ContentSection
         id="about"
         title="Sobre mim"

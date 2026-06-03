@@ -1,0 +1,112 @@
+.toggleButton {
+  position: fixed;
+
+  border-radius: 50%;
+  background-color: var(--lightBeige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--semiTransparentBrown);
+  box-shadow: 0 0 10px var(--vidro);
+  z-index: 110;
+
+  top: auto;
+  bottom: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: linear-gradient(
+    180deg,
+    var(--semiTransparentBrown),
+    var(--semiTransparentBlack),
+    var(--semiTransparentBrown)
+  );
+  color: var(--beigeGold);
+  border: 1px solid var(--white);
+}
+
+.toggleButton:hover {
+  cursor: pointer;
+}
+
+.advicer {
+  position: fixed;
+
+  padding: 1rem;
+  border: 1px solid var(--white);
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--semiTransparentBrown),
+    var(--semiTransparentBlack),
+    var(--semiTransparentBrown)
+  );
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5rem);
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+  top: auto;
+  right: 0;
+  bottom: 4.7rem;
+  width: 100%;
+
+  @media (min-width: 540px) {
+    width: 400px;
+    right: 1rem;
+  }
+}
+
+.advicerOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.title {
+  margin-bottom: 0.85rem;
+  color: var(--beigeGold);
+  font-size: 1.1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.link {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.2rem;
+
+  color: var(--richGoldd);
+  text-align: center;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.link:hover {
+  color: var(--black);
+  background: linear-gradient(
+    to right,
+    var(--lightBeige) 35%,
+    var(--beigeGold) 100%
+  );
+}
+
+@media (max-width: 1024px) {
+  .toggleButton {
+    right: 1rem;
+  }
+}
