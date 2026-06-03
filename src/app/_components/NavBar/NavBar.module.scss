@@ -1,0 +1,149 @@
+.navWrapperWrap {
+  background: linear-gradient(
+    90deg,
+    var(--semiTransparentBrown),
+    var(--semiTransparentBlack),
+    var(--semiTransparentBrown)
+  );
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  z-index: 100;
+  overflow: hidden;
+  transition:
+    background 1s ease,
+    all 1s ease;
+}
+
+.navWrapperWrap::after {
+  content: "";
+  position: absolute;
+  background: var(--darkOverlay);
+  backdrop-filter: blur(4px);
+  inset: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s ease;
+}
+
+.navWrapperWrap:hover::after {
+  opacity: 1;
+}
+
+.navWrapperWrap:hover {
+  background: transparent;
+}
+
+.navWrapper {
+  padding: 1.5rem;
+  box-shadow: inset 0 -2px 0 0 var(--smoothGold);
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  overflow: hidden;
+  transition: box-shadow 1s ease;
+}
+
+.navWrapper::after {
+  content: "";
+  background: linear-gradient(90deg, var(--whiteBeige), var(--smoothGold));
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.navWrapper:hover {
+  box-shadow: inset 0 -2px 0 0 transparent;
+}
+
+.navWrapper:hover::after {
+  width: 0;
+}
+
+.navegationBoxCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.navegationBoxCont li {
+  list-style: none;
+  margin-top: 0.1rem;
+}
+
+.navWrapperWrap:hover .navBoxIBack {
+  color: var(--black);
+}
+
+.navegationBoxContI {
+  text-decoration: none;
+  color: var(--richGoldd);
+  font-size: 1.2rem;
+}
+
+.navBoxIBack {
+  transition: color 0.5s ease;
+}
+
+.themeSwitch {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--lightBeige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.themeSwitch:hover {
+  cursor: pointer;
+}
+
+.downLine {
+  padding: 0.1rem 0;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.downLineA::after {
+  content: "";
+  background: linear-gradient(90deg, var(--smoothGold), var(--richGold));
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.downLineA:hover::after {
+  width: 100%;
+}
+
+.navegationBoxContIAc {
+  background: linear-gradient(
+    to right,
+    var(--lightBeige) 35%,
+    var(--beigeGold) 100%
+  );
+  backdrop-filter: blur(2px);
+  padding: 0.3rem;
+  border-radius: 10px;
+  outline: 1px solid var(--white);
+  color: var(--black);
+  transition: color 0.55s ease;
+}
+
+.navegationBoxContIAc:hover {
+  background: var(--black);
+  color: var(--richGoldd);
+  border: none;
+}

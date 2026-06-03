@@ -1,0 +1,59 @@
+.mainCont {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePhoto {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: 0.5mm solid black;
+}
+
+.profilePhoto:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 10px var(--black);
+  border: none;
+}
+
+.heading {
+  font-size: 4rem;
+  padding-top: 2rem;
+  transition: 0.5s;
+  color: var(--black);
+}
+
+.heading:hover {
+  transform: translateY(-0.2rem) scale(1.06);
+}
+
+.titleP {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.downLine {
+  padding: 0.1rem 0;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.downLineA::after {
+  content: "";
+  background: linear-gradient(90deg, var(--smoothGold), var(--richGold));
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.downLineA:hover::after {
+  width: 100%;
+}

@@ -1,0 +1,81 @@
+.secBoxes {
+  max-width: 500px;
+  margin: 5rem auto;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry cover 40%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.subtitleH2Box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  width: fit-content;
+  color: var(--black);
+}
+
+.downLine {
+  padding: 0.1rem 0;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.downLineA::after {
+  content: "";
+  background: linear-gradient(90deg, var(--smoothGold), var(--richGold));
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.downLineA:hover::after {
+  width: 100%;
+}
+
+.subtitleBox {
+  margin: auto 0.8rem;
+}
+
+.subtitleBoxP {
+  font-size: 1.3rem;
+  text-indent: 3rem;
+  text-align: justify;
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: 0.5s;
+  color: var(--black);
+}
+
+.subtitleBoxP:hover {
+  box-shadow: 0 0 10px var(--black);
+}
+
+.subtitleBoxP::first-letter {
+  font-size: 1.5rem;
+  margin-right: 0.06rem;
+  font-weight: bold;
+  color: var(--smoothGold);
+  text-shadow:
+    -1px -1px 0 var(--black),
+    1px -1px 0 var(--black),
+    -1px 1px 0 var(--black),
+    1px 1px 0 var(--black);
+}

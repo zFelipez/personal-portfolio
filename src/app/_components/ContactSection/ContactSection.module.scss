@@ -1,0 +1,191 @@
+.secBoxes {
+  max-width: 500px;
+  margin: 5rem auto;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry cover 40%;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.contact {
+  margin: 0.5rem;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--whiteGrey);
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: 2px solid var(--vidro);
+  background: linear-gradient(
+    90deg,
+    var(--semiTransparentBrown),
+    var(--semiTransparentBlack),
+    var(--semiTransparentBrown)
+  );
+  transition: 0.5s;
+}
+
+.contact:hover {
+  box-shadow: 0 0 10px var(--black);
+}
+
+.subtitleH2Box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  width: fit-content;
+  color: var(--black);
+}
+
+.subtitleContact {
+  color: var(--richGoldd);
+}
+
+.downLine {
+  padding: 0.1rem 0;
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+.downLineA::after {
+  content: "";
+  background: linear-gradient(90deg, var(--smoothGold), var(--richGold));
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.downLineA:hover::after {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  margin: auto;
+  width: 90%;
+}
+
+.formField {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  font-size: 1rem;
+  font-family:
+    EB Garamond,
+    "sans-serif";
+  outline: none;
+  padding: 1rem;
+  color: var(--richGoldd);
+  letter-spacing: 0.1rem;
+  transition: 1s;
+  background: var(--semiTransparentBrown);
+}
+
+.formField:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--Brown) inset !important;
+  -webkit-text-fill-color: var(--richGoldd) !important;
+}
+
+.formField:focus {
+  box-shadow: 0 0 10px var(--vidro);
+  border: 1px solid var(--richGoldd);
+  transform: scale(1.04);
+  will-change: transform;
+}
+
+.formFieldS {
+  height: 2rem;
+}
+
+.formField::placeholder {
+  color: var(--placeholderWhite);
+  font-family:
+    EB Garamond,
+    "sans-serif";
+}
+
+.formBtn {
+  width: 100%;
+  height: 3.2rem;
+  border: 0.5mm solid var(--white);
+  border-radius: 5mm;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    var(--lightBeige) 35%,
+    var(--beigeGold) 100%
+  );
+  backdrop-filter: blur(2px);
+  color: var(--black);
+  transition: 0.5s;
+  margin-top: 0.3rem;
+}
+
+.formBtn:hover {
+  transform: translateY(-4px);
+  background: var(--black);
+  color: var(--richGoldd);
+  border: 0.5mm solid var(--white);
+  box-shadow: 0 0 10px var(--vidro);
+}
+
+.text {
+  font-size: 22px;
+  font-weight: bold;
+  z-index: 1;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'><path fill=' rgb(50, 50, 50)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z' transform='matrix(-1 0 0 1 1600 0)'/></svg>");
+  background-size: 200% 100%;
+  top: 100%;
+  left: 0;
+  animation: wave 2s linear infinite;
+  transition: 0.5s;
+}
+
+.formBtn:hover .wave {
+  top: 50%;
+}
+
+@keyframes wave {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 200%;
+  }
+}

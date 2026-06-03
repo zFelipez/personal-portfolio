@@ -1,0 +1,26 @@
+.page {
+  min-height: 100vh;
+}
+
+.page :global(::-webkit-scrollbar) {
+  background-color: var(--smoothGold);
+  width: 0.5rem;
+}
+
+.page :global(::-webkit-scrollbar-thumb) {
+  background: linear-gradient(45deg, var(--richGold), var(--white));
+  border-radius: 1rem;
+  transition: all 0.5s ease;
+}
+
+.page :global(::-webkit-scrollbar-thumb:hover) {
+  outline: 1px solid var(--black);
+}
+
+/* -------- */
+
+.page :global(a),
+.page :global(img),
+.page :global(button) {
+  -webkit-tap-highlight-color: transparent;
+}
