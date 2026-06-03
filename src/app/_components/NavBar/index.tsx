@@ -9,10 +9,10 @@ export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={styles.navWrapperWrap}>
-      <div className={styles.navWrapper}>
-        <nav className={styles.navContent}>
-          <button type="button" className={styles.themeSwitch}>
+    <div className={styles.navShell}>
+      <div className={styles.navBar}>
+        <nav className={styles.navToolbar}>
+          <button type="button" className={styles.themeButton}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -35,12 +35,12 @@ export function NavBar() {
           </button>
 
           <ul
-            className={`${styles.navegationBoxCont} ${isOpen ? styles.navegationBoxContOpen : ""}`}
+            className={`${styles.navList} ${isOpen ? styles.navListOpen : ""}`}
           >
             <li>
               <Link
                 href="#home"
-                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
+                className={`${styles.navLink} ${styles.hoverUnderline} ${styles.desktopHoverLink}`}
                 onClick={() => setIsOpen(false)}
               >
                 Home
@@ -49,7 +49,7 @@ export function NavBar() {
             <li>
               <Link
                 href="#about"
-                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
+                className={`${styles.navLink} ${styles.hoverUnderline} ${styles.desktopHoverLink}`}
                 onClick={() => setIsOpen(false)}
               >
                 Sobre
@@ -58,7 +58,7 @@ export function NavBar() {
             <li>
               <Link
                 href="#skills"
-                className={`${styles.navegationBoxContI} ${styles.hoverUnderline} ${styles.navBoxIBack}`}
+                className={`${styles.navLink} ${styles.hoverUnderline} ${styles.desktopHoverLink}`}
                 onClick={() => setIsOpen(false)}
               >
                 Habilidades
@@ -67,7 +67,7 @@ export function NavBar() {
             <li>
               <Link
                 href="#contact"
-                className={`${styles.navegationBoxContI} ${styles.navegationBoxContIAc}`}
+                className={`${styles.navLink} ${styles.navLinkAccent}`}
                 onClick={() => setIsOpen(false)}
               >
                 Contato

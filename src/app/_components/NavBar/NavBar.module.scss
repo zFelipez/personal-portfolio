@@ -1,7 +1,7 @@
 @use "../../styles/fontSizes" as font;
 @use "../../styles/mixins" as mixins;
 
-.navWrapperWrap {
+.navShell {
   @include mixins.glass-bar-surface();
   position: fixed;
   top: 0;
@@ -9,13 +9,14 @@
   z-index: 100;
 }
 
-.navWrapper {
+.navBar {
   @include mixins.glass-bar-inner();
 }
 
-.navContent {
+.navToolbar {
   position: relative;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -26,8 +27,8 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border:none;
-    border-radius: 50%;
+  border: none;
+  border-radius: 50%;
   background: linear-gradient(
     90deg,
     var(--semiTransparentBrown),
@@ -39,14 +40,14 @@
 
 .menuToggle:hover {
   cursor: pointer;
-    background: linear-gradient(
-        90deg,
-        var(--semiTransparentBlack),
-        var(--semiTransparentBlack)
-    );
+  background: linear-gradient(
+    90deg,
+    var(--semiTransparentBlack),
+    var(--semiTransparentBlack)
+  );
 }
 
-.navegationBoxCont {
+.navList {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -54,32 +55,32 @@
   gap: 3rem;
 }
 
-.navegationBoxCont li {
+.navList li {
   list-style: none;
   margin-top: 0.1rem;
 }
 
 @media (min-width: 769px) {
-  .navWrapperWrap:hover .navBoxIBack {
+  .navShell:hover .desktopHoverLink {
     color: var(--black);
   }
 
   .hoverUnderline {
-  @include mixins.hover-underline();
-}
+    @include mixins.hover-underline();
+  }
 }
 
-.navegationBoxContI {
+.navLink {
   text-decoration: none;
   color: var(--richGoldd);
   font-size: font.$font-size-md;
 }
 
-.navBoxIBack {
+.desktopHoverLink {
   transition: color 0.5s ease;
 }
 
-.themeSwitch {
+.themeButton {
   position: absolute;
   right: 0;
   top: 50%;
@@ -95,13 +96,11 @@
   border: none;
 }
 
-.themeSwitch:hover {
+.themeButton:hover {
   cursor: pointer;
 }
 
-
-
-.navegationBoxContIAc {
+.navLinkAccent {
   background: linear-gradient(
     to right,
     var(--lightBeige) 35%,
@@ -115,25 +114,25 @@
   transition: color 0.55s ease;
 }
 
-.navegationBoxContIAc:hover {
+.navLinkAccent:hover {
   background: var(--black);
   color: var(--richGoldd);
   border: none;
 }
 
 @media (max-width: 768px) {
-  .navWrapperWrap,
-  .navWrapper,
-  .navContent {
+  .navShell,
+  .navBar,
+  .navToolbar {
     overflow: visible;
   }
 
-  .navContent {
+  .navToolbar {
     display: flex;
     justify-content: space-between;
   }
 
-  .navWrapper {
+  .navBar {
     padding: 1rem;
   }
 
@@ -141,7 +140,7 @@
     display: inline-flex;
   }
 
-  .navegationBoxCont {
+  .navList {
     position: absolute;
     top: calc(100% + 0.85rem);
     right: 0;
@@ -169,24 +168,22 @@
       opacity 0.25s ease,
       transform 0.25s ease,
       visibility 0.25s ease;
-    
   }
 
-  .navegationBoxContOpen {
+  .navListOpen {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
     margin-top: 4px;
-    
   }
 
-  .navegationBoxCont li {
+  .navList li {
     width: 100%;
     margin-top: 0;
   }
 
-  .navegationBoxContI {
+  .navLink {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -194,13 +191,20 @@
     border-radius: 0.75rem;
   }
 
-  .themeSwitch {
+  .themeButton {
     position: static;
     transform: none;
     width: 100%;
     height: fit-content;
     max-width: fit-content;
     border-radius: 0.75rem;
-     
+  }
+}
+
+@media (max-width: 540px) {
+  .navList {
+    left: -1rem;
+    right: -1rem;
+    width: auto;
   }
 }
